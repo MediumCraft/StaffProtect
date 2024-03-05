@@ -41,6 +41,10 @@ jobs:
           distribution: 'temurin'
           java-version: 17
 
+      # Setup Gradle because StaffProtect doesn't have it already
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
       # TODO: Fix build caches
       # Currently not working
       - name: Setup build cache
