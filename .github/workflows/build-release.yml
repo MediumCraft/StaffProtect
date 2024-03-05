@@ -56,12 +56,12 @@ jobs:
             ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle.kts') }}
       
       # Bug fix
-      - name: Gradle Permission
-        run: chmod +x ./gradlew
-        continue-on-error: true
+      #- name: Gradle Permission
+      #  run: chmod +x ./gradlew
+      #  continue-on-error: true
       
       - name: Build with Gradle
-        run: ./gradlew build --full-stacktrace
+        run: gradle build --full-stacktrace
         continue-on-error: true # So it can upload the dev_env.zip for debug
         
       - name: Archive Repository
