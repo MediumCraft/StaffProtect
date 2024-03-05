@@ -58,6 +58,7 @@ jobs:
       # Bug fix
       - name: Gradle Permission
         run: chmod +x ./gradlew
+        continue-on-error: true
       
       - name: Build with Gradle
         run: ./gradlew build --full-stacktrace
