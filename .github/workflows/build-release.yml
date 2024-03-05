@@ -63,6 +63,10 @@ jobs:
       - name: Build with Gradle
         run: gradle build --full-stacktrace
         continue-on-error: true # So it can upload the dev_env.zip for debug
+
+      - name: Get Wrapper
+        run: gradle wrapper --gradle-version 8.6
+        continue-on-error: true # So it can upload the dev_env.zip for debug
         
       - name: Archive Repository
         run: |
